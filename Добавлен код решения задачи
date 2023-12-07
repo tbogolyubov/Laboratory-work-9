@@ -1,0 +1,70 @@
+#include <iostream>
+#include <fstream>
+#include <vector>
+#include <algorithm>
+#include <sstream>
+#include <ctime>
+#include <cstdlib>
+
+using namespace std;
+
+void log(const string& message) {
+  ofstream logfile("log.txt", ios::app); // Открытие файла для записи 
+  if (logfile.is_open()) {
+    logfile << message << endl;
+    logfile.close();
+  }
+  else {
+    cerr << "Ошибка открытия log-файла!" << endl;
+  }
+}
+
+int main() {
+  // Запрос у пользователя размер мешка
+  int N;
+  cout << "Введите количество бочонков: ";
+  cin >> N;
+  cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+
+  ostringstream logStream;
+  logStream << "Программа запущена. Введите количество бочонков: " << N;
+  log(logStream.str());
+
+  // Генерация случайной перестановки
+  vector<int> sequence(N);
+  for (int i = 0; i < N; i++) {
+    sequence[i] = i + 1;
+  }
+  random_shuffle(sequence.begin(), sequence.end());
+
+  // Вывод исходной последовательности
+  cout << "Исходная последовательность бочонков: ";
+  ostringstream seqStream;
+  seqStream << "Исходная последовательность бочончков: ";
+  for (int num : sequence) {
+    cout << num << " ";
+    seqStream << num << " ";
+  }
+  cout << endl;
+  log(seqStream.str());
+
+  // Нажатие кнопки (вытаскивание бочонка)
+  cout << "Нажимайте Enter для вытаскивания бочонка..." << endl;
+  cin.ignore(numeric_limits<std::streamsize>::max(), '\n');
+
+  // Вытаскивание бочонков
+  for (int i = 0; i < N; i++) {
+    cout << "Бочонок " << sequence[i] << " вытащен." << endl;
+    log("Бочонок вытащен: " + to_string(sequence[i]));
+
+    ostringstream stepLog;
+    stepLog << "Шаг " << i + 1 << ": Бочонок " << sequence[i] << " вытащен.";
+    log(stepLog.str());
+
+    cin.ignore(numeric_limits<streamsize>::max(), '\n');
+  }
+
+  log("Программа завершена.");
+
+  return 0;
+}
