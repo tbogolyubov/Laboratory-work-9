@@ -5,3 +5,7 @@
 # Инструкция по использованию программы
 Программу можно открыть в средах разработки для языка С++: Visual Studio, C++ Builder, Qt Creator, Xcode, Eclipse и других. В IDE Visual Studio для работы с отладкой кода нужно открыть проект, нажать кнопку с зелёной стрелкой и надписью "Локальный отладчик Windows". Откроется консоль отладки, где программа попросит пользователя ввести количество бочонков, выдаст выпавшую последовательность бочонков. Затем нужно нажимать клавишу Enter, по каждому нажатию на экран будет выводиться номер выпавшего бочонка.
 # Скриншоты тестов
+![Alt-текст](https://github.com/tbogolyubov/Laboratory-work-9/blob/main/%D1%82%D0%B5%D1%81%D1%821.png)
+![Alt-текст](https://github.com/tbogolyubov/Laboratory-work-9/blob/main/%D1%82%D0%B5%D1%81%D1%822.png)
+![Alt-текст](https://github.com/tbogolyubov/Laboratory-work-9/blob/main/%D1%82%D0%B5%D1%81%D1%823.png)
+![Alt-текст](https://github.com/tbogolyubov/Laboratory-work-9/blob/main/%D1%82%D0%B5%D1%81%D1%823.1.png)
